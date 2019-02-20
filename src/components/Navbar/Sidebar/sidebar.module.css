@@ -1,0 +1,15 @@
+.friends {
+    
+    color: white;
+}
+.friend {
+    display: grid;
+    justify-content: center;
+    margin: auto
+}
+.friend img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    grid-column: 1/3;
+}
