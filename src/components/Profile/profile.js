@@ -4,11 +4,11 @@ import Myposts from './MyPosts/myposts';
 import ProfileInfo from './ProfileInfo/profileInfo';
 
   
-const Profile = ({ state, addPost, updateNewPostText }) => {
+const Profile = ({store}) => {
     return (
         <div>
           <ProfileInfo />
-          <Myposts state={state} addPost={addPost} updateNewPostText={updateNewPostText} />
+          <Myposts store={store} />
         </div>
     );
 }

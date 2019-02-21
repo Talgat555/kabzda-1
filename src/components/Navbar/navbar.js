@@ -6,7 +6,7 @@ import Friends from './Sidebar/sidebar';
 
 
 const Navbar  = ({ state }) => {
-  const { friends } = state;
+  const { friends } = state.sidebar;
     return (
         <nav className={s.nav}>
             <div className={s.item}>

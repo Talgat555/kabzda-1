@@ -10,33 +10,23 @@ import Settings from './components/Settings/settings';
 import './App.css';
 
 
-const App = ({ state, addPost, updateNewPostText, addMessage, updateNewMessageText }) => {
-  const { profilePage, dialogsPage, sidebar }= state;
+const App = ({ store }) => {
   return (
     <BrowserRouter>  
       <div className='app-wrapper'>
       <Header />
-      <Navbar state={sidebar} />
+      <Navbar state={store.getState()} />
       <div className='app-wrapper-content'>
-        <Route exact path='/dialogs' render={ () =>
-            <Dialogs state={dialogsPage}
-                    addMessage={addMessage}
-                    updateNewMessageText={updateNewMessageText}
-            />}
-        />
-        <Route path='/profile' render={() =>
-            <Profile state={profilePage}
-                    addPost={addPost}
-                    updateNewPostText={updateNewPostText}
-            />}           
-        />
+        <Route exact path='/dialogs' render={ () => <Dialogs store={store} />} />
+        <Route path='/profile' render={() => <Profile store={store} />} />
         <Route path='/news' render={ () => <News /> } />
         <Route path='/music' render={ () => <Music /> } />
         <Route path='/settings' render={ () => <Settings /> } />
-        </div>  
+        </div>
     </div>
     </BrowserRouter>
   );
 }
+
 
 export default App;

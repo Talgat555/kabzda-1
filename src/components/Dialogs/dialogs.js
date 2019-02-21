@@ -23,9 +23,9 @@ const Message = (props) => {
     )
 }
 
-const Dialogs = ({ state, addMessage, updateNewMessageText }) => {
+const Dialogs = ({ store }) => {
 
-    const { dialogs, messages } = state;
+    const { dialogs, messages } = store.getState().dialogsPage;
     let dialogsElements = dialogs
         .map( (d) => <Dialog name={d.name} id={d.id} avatar={d.avatar}/> )
 
@@ -41,7 +41,7 @@ const Dialogs = ({ state, addMessage, updateNewMessageText }) => {
                 { messagesElements }
             </div> 
             <div>
-                <NewMessage addMessage={addMessage} updateNewMessageText={updateNewMessageText} />
+                <NewMessage store={store} />
             </div>  
         </div> 
     )

@@ -3,22 +3,29 @@ import s from './myposts.module.css';
 import Post from './Post/posts';
 
   
-const Myposts = ({ state, addPost, updateNewPostText }) => {
+const Myposts = ({ store }) => {
 
-    const { posts, newPostText } = state;
+    const { posts, newPostText } = store.getState().profilePage
+    
     let postsElements = posts
       .map((p) => <Post message={p.message} likesCount={p.likesCount} />)
 
     let newPostElement = React.createRef();
 
     let addTextPost = () => {
-      let text = newPostElement.current.value;
-      addPost();
+      let action = {
+        type:'ADD-POST'
+      }
+      store.dispatch(action);
     }
 
     let onPostChange = () => {
       let text = newPostElement.current.value
-      updateNewPostText(text);
+      let action = {
+        type:'UPDATE-NEW-POST-TEXT',
+        newText: text
+      }
+      store.dispatch(action);
     };
 
     return (
