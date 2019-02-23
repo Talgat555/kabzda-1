@@ -5,10 +5,14 @@ import Post from './Post/posts';
   
 const Myposts = ({ store }) => {
 
-    const { posts, newPostText } = store.getState().profilePage
-    
-    let postsElements = posts
-      .map((p) => <Post message={p.message} likesCount={p.likesCount} />)
+    const { posts, newPostText } = store.getState().profilePage;
+    let i= 1;
+    let postsElements =
+      posts.map((p) =>
+        <Post key={i++}
+              message={p.message}
+              likesCount={p.likesCount}
+        />)
 
     let newPostElement = React.createRef();
 
@@ -23,7 +27,7 @@ const Myposts = ({ store }) => {
       let text = newPostElement.current.value
       let action = {
         type:'UPDATE-NEW-POST-TEXT',
-        newText: text
+        text: text
       }
       store.dispatch(action);
     };
@@ -33,7 +37,7 @@ const Myposts = ({ store }) => {
           <h3>My posts</h3>
         <div>
           <div>
-            <textarea onChange={onPostChange} ref={newPostElement} value={newPostText}/>
+            <textarea onChange={onPostChange} ref={newPostElement} value={newPostText.text}/>
           </div>
           <div>
             <button onClick={addTextPost}>Add post</button>

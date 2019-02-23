@@ -8,8 +8,11 @@ const NewMessage = ({ store }) => {
 
     let addNewMessage = () => {
         let action = {
-            type:'ADD-MESSAGE'
+            type:'ADD-MESSAGE',
+            newText: {
+            }
         }
+
         store.dispatch(action);
     }
 
@@ -17,8 +20,8 @@ const NewMessage = ({ store }) => {
         let message= text.current.value;
         let action = {
             type: 'UPDATE-NEW-MESSAGE-TEXT',
-            newText: message
-        }
+            text: message
+        } 
         store.dispatch(action)
     }
     const { newMessageText } = store.getState().dialogsPage
@@ -27,7 +30,7 @@ const NewMessage = ({ store }) => {
             <textarea
                 onChange={newTextMessage}
                 ref={text}
-                value={newMessageText}
+                value={newMessageText.newText}
             />
             <button onClick={addNewMessage}>New message</button>
         </div>

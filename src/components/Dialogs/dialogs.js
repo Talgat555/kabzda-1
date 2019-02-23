@@ -27,10 +27,10 @@ const Dialogs = ({ store }) => {
 
     const { dialogs, messages } = store.getState().dialogsPage;
     let dialogsElements = dialogs
-        .map( (d) => <Dialog name={d.name} id={d.id} avatar={d.avatar}/> )
+        .map( (d) => <Dialog key={d.id} name={d.name} id={d.id} avatar={d.avatar}/> )
 
     let messagesElements = messages
-        .map( (m) => <Message message={m.message} />)
+        .map( (m) => <Message key={m.id}message={m.message} />)
 
     return (
         <div className={s.dialogs}>
