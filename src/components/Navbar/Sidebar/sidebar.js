@@ -6,7 +6,7 @@ const Friends = (props) => {
     let friend = props.friends.map((f) =>
         <div key={f.id} className={s.friend}>
             <img src={f.avatar}/>
-            <div>{f.name}</div>
+            {f.name}       
         </div>
     );
 
