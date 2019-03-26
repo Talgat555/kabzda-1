@@ -9,20 +9,21 @@ const Message = (props) => {
     )
 }
 
-const NewMessage = ({ store }) => {
+const NewMessage = ({ addNewMessageAction, updateNewMessageAction, newMessageText, messages }) => {
 
     let addNewMessage = () => {
-        store.dispatch(addNewMessageActionCreate());
+        addNewMessageAction()
     }
 
     let newTextMessage = (e) => {
         let message= e.target.value;
-        store.dispatch(updateNewMessageTextActionCreate(message))
+        updateNewMessageAction(message)
     }
-    const { newMessageText, messages } = store.getState().dialogsPage
-
-    let messagesElements = messages
-        .map( (m) => <Message key={m.id}message={m.message} />)
+    
+    let messagesElements =
+        messages.map( (m) =>
+            <Message key={m.id}message={m.message} />
+        )
 
     return (
         <div>

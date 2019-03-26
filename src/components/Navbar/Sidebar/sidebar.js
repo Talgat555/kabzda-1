@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './sidebar.module.css';
 
-const Friends = (props) => {
+const Sidebar = (props) => {
 
     let friend = props.friends.map((f) =>
         <div key={f.id} className={s.friend}>
@@ -20,4 +20,4 @@ const Friends = (props) => {
     );
 }
 
-export default Friends;
+export default Sidebar;

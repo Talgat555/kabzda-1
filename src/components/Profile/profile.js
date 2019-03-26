@@ -1,14 +1,14 @@
 import React from 'react';
 import s from './profile.module.css';
-import Myposts from './MyPosts/myposts';
 import ProfileInfo from './ProfileInfo/profileInfo';
+import MypostsContainer from './MyPostsContainer/mypostsContainer';
 
-  
+
 const Profile = ({store}) => {
     return (
         <div>
-          <ProfileInfo />
-          <Myposts store={store} />
+            <ProfileInfo/>
+            <MypostsContainer store={store}/>
         </div>
     );
 }
