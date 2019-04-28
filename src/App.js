@@ -13,7 +13,7 @@ const App = () => {
             <NavbarContainer/>
             <div className='app-wrapper-content'>
                 <Switch>
-                    <Config/>
+                    <Config />
                 </Switch>
             </div>
         </div>

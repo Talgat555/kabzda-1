@@ -1,14 +1,13 @@
-import React from 'react';
-import {addNewMessageActionCreate, updateNewMessageTextActionCreate} from './../../../redux/dialogs-reducer';
-import MessagePage from '../NewMessage/messagePage';
 import {connect} from "react-redux";
+import Dialogs from "./dialogs";
+import {addNewMessageActionCreate, updateNewMessageTextActionCreate} from "../../redux/dialogs-reducer";
 
 
 const mapStateToProps = (state) => {
     return{
         dialogsPage: state.dialogsPage
     }
-};
+}
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -22,7 +21,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-const MessagePageContainer = connect(mapStateToProps, mapDispatchToProps)(MessagePage);
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs)
 
-
-export default MessagePageContainer;
+export default DialogsContainer;

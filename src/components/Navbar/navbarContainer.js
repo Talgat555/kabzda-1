@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './navbar';
 import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
 
 const mapStateToProps = (state) => {
     return{
@@ -8,6 +9,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-const NavbarContainer = connect(mapStateToProps)(Navbar);
+const NavbarContainer = withRouter (connect(mapStateToProps)(Navbar));
 
 export default NavbarContainer;

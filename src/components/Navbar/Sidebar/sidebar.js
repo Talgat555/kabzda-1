@@ -5,8 +5,12 @@ const Sidebar = (props) => {
 
     let friend = props.friends.map((f) =>
         <div key={f.id} className={s.friend}>
-            <img src={f.avatar}/>
-            {f.name}       
+            <span>
+                <img src={f.avatar}/>
+            </span>
+            <span>
+                {f.name}
+            </span>
         </div>
     );
 
