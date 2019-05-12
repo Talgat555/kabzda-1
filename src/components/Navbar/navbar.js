@@ -30,10 +30,10 @@ const Navbar = ({friends}) => {
                 Music
             </Wrapper>
             <Wrapper>
-                Settings
+                Users
             </Wrapper>
             <Wrapper>
-                Users
+                Settings
             </Wrapper>
             <Sidebar friends={friends}/>
         </nav>

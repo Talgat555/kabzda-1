@@ -1,6 +1,5 @@
 import React from 'react';
 import s from './newMessage.module.css';
-import { addNewMessageActionCreate, updateNewMessageTextActionCreate } from './../../../redux/dialogs-reducer';
 
 
 const Message = (props) => {
@@ -26,16 +25,20 @@ const NewMessage = ({ addNewMessageAction, updateNewMessageAction, newMessageTex
         )
 
     return (
-        <div>
-            <div>
+        <div className={s.contaner}>
+            <div className={s.messages}>
                 {messagesElements}
             </div>
             <textarea
+                className={s.textarea}
                 onChange={newTextMessage}
                 value={newMessageText.text}
                 placeholder='Enter your message'
             />
-            <button onClick={addNewMessage}>New message</button>
+            <button
+                className={s.btnMessage}
+                onClick={addNewMessage}>New message
+            </button>
         </div>
     )
 } 

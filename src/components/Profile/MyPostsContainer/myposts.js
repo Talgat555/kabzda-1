@@ -30,6 +30,7 @@ const Myposts = ({onPostChange, addTextPost, profilePage}) => {
             <div>
                 <div>
             <textarea
+                className={s.textarea}
                 onChange={handleChange}
                 ref={newPostElement}
                 placeholder='Enter your post'
@@ -37,7 +38,11 @@ const Myposts = ({onPostChange, addTextPost, profilePage}) => {
             />
                 </div>
                 <div>
-                    <button onClick={changeAddTextPost}>Add post</button>
+                    <button
+                        className={s.button}
+                        onClick={changeAddTextPost}>
+                        Add post
+                    </button>
                 </div>
             </div>
             <div className={s.posts}>

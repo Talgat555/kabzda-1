@@ -1,4 +1,40 @@
-.message {
-    
+.contaner {
+    display: grid;
+    margin: auto;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 400px 1fr 1fr 1fr;
+    grid-template-rows: 1fr 200px 2fr 1fr;
 }
 
+.textarea {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    outline: none;
+    -moz-appearance: none;
+    resize: none;
+    border: 1px solid #999;
+    border-radius: 5px;
+    height: 70px;
+    padding: 5px;
+
+}
+
+.messages {
+    background-color: aliceblue;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.btnMessage {
+    grid-column: 2/3;
+    grid-row: 4/5;
+    color: azure;
+    background-color: limegreen;
+    width: 150px;
+    height: 40px;
+    border: 1px solid #888;
+    border-radius: 5px;
+}

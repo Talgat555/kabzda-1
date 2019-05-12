@@ -1,16 +1,26 @@
-.friends {
+.container {
     color: white;
+    margin: auto;
+}
+.box {
+    height: 500px;
+}
+
+.friends {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*grid-template-rows: 1fr 1fr 1fr;*/
+    grid-gap : 5px;
+    margin: auto;
 }
 
 .friend {
     display: grid;
     justify-content: center;
-    margin: auto
 }
 
 .friend img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    grid-column: 1/3;
 }
