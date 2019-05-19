@@ -21,24 +21,24 @@ const Dialog = (props) => {
     )
 }
 
-const MessagePage = ({ addNewMessageAction, updateNewMessageAction, dialogsPage }) => {
-    const { newMessageText, messages } = dialogsPage;
-    return(
-        messages.map( (m) => {
-                return(
-                    <Route key={m.id} path={`/dialogs/${m.id}`} render={ () =>
-                        <NewMessage
-                            addNewMessageAction={addNewMessageAction}
-                            updateNewMessageAction={updateNewMessageAction}
-                            newMessageText={ newMessageText }
-                            messages={messages}
-                        />}
-                    />
-                )
-            }
-        )
-    )
-}
+// const MessagePage = ({ addNewMessageAction, updateNewMessageAction, dialogsPage }) => {
+//     const { newMessageText, messages } = dialogsPage;
+//     return(
+//         messages.map( (m) => {
+//                 return(
+//                     <Route key={m.id} path={`/dialogs/${m.id}`} render={ () =>
+//                         <NewMessage
+//                             addNewMessageAction={addNewMessageAction}
+//                             updateNewMessageAction={updateNewMessageAction}
+//                             newMessageText={ newMessageText }
+//                             messages={messages}
+//                         />}
+//                     />
+//                 )
+//             }
+//         )
+//     )
+// }
 
 const Dialogs = ({ dialogsPage, addNewMessageAction, updateNewMessageAction }) => {
 
