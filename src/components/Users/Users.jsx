@@ -1,10 +1,9 @@
 import React from 'react';
 import s from './users.module.css';
-import userPhoto from '../../../src/Assets/images/user.png';
+import userPhoto from '../../../src/Assets/images/user.png'
 
 const Users = ({
-                   users, follow, unfollow,
-                   currentPage, setCurrentPage,
+                   users, follow, unfollow, currentPage, setCurrentPage,
                    onPageChanged, totalUsersCount, pageSize
                }) => {
 
@@ -23,37 +22,37 @@ const Users = ({
                                   onClick={() => {
                                       onPageChanged(p)
                                   }}>{p}
-                             </span>
+                         </span>
                     )
                 })}
             </div>
             <div>
                 {users.map(u =>
                     <div key={u.id}>
-                            <span>
-                                <div>
-                                    <img
-                                        src={u.photos.small != null ? u.photos.small : userPhoto}
-                                        className={s.userPhoto}
-                                    />
-                                </div>
-                                <div>
-                                    {u.followed ? <button onClick={() => {
-                                            unfollow(u.id)
-                                        }}>folllow</button>
-                                        : <button onClick={() => {
-                                            follow(u.id)
-                                        }}>unfolllow</button>}
-                                </div>
-                            </span>
                         <span>
-                                <div>{u.name}</div>
-                                <div>{u.status}</div>
-                            </span>
+                            <div>
+                                <img
+                                    src={u.photos.small != null ? u.photos.small : userPhoto}
+                                    className={s.userPhoto}
+                                />
+                            </div>
+                            <div>
+                                {u.followed ? <button onClick={() => {
+                                        unfollow(u.id)
+                                    }}>folllow</button>
+                                    : <button onClick={() => {
+                                        follow(u.id)
+                                    }}>unfolllow</button>}
+                            </div>
+                        </span>
                         <span>
-                                <div>{"u.location.country"}</div>
-                                <div>{"u.location.city"}</div>
-                            </span>
+                            <div>{u.name}</div>
+                            <div>{u.status}</div>
+                        </span>
+                        <span>
+                            <div>{"u.location.country"}</div>
+                            <div>{"u.location.city"}</div>
+                        </span>
                     </div>
                 )}
             </div>
