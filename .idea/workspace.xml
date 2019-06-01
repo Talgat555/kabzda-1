@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d81563b5-34a2-46fe-abc2-8eac479d6cd2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Dialogs/dialogsContainerAPI.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Profile/profileContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/Preloader/preloader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialog/dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialog/dialog.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/dialogContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs/dialogContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/dialogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs/dialogs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/dialogs.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs/dialogs.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/profileInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/profileInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/profile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile/profile.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.js" afterDir="false" />
-    </list>
+    <list default="true" id="d81563b5-34a2-46fe-abc2-8eac479d6cd2" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -191,7 +174,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="683" />
     <option name="height" value="728" />
   </component>
@@ -265,7 +248,7 @@
     <property name="ToolWindowEvent Log.ShowToolbar" value="false" />
     <property name="ToolWindowTODO.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../insta_react" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="D:\git\kabzda-1\node_modules\eslint" />
@@ -322,12 +305,12 @@
       <workItem from="1558367539494" duration="3643000" />
       <workItem from="1558852651959" duration="16861000" />
       <workItem from="1559063025289" duration="1260000" />
-      <workItem from="1559391143445" duration="1216000" />
+      <workItem from="1559391143445" duration="1397000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167179000" />
+    <option name="totallyTimeSpent" value="167360000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -336,7 +319,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="2" sideWeight="0.5833333" visible="true" weight="0.17423679" />
       <window_info anchor="bottom" auto_hide="true" x="0" y="330" width="1366" height="67" id="TODO" order="8" sideWeight="0.27891654" type="SLIDING" weight="0.102605864" />
