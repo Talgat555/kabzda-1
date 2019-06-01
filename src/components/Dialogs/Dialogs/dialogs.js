@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink, Route, Switch} from 'react-router-dom';
 import s from './dialogs.module.css';
-import NewMessage from "./NewMessage/newMessage";
+import NewMessage from "../NewMessage/newMessage";
 // import MessagePage from "./NewMessage/messagePage";
 
 
@@ -20,25 +20,6 @@ const Dialog = (props) => {
         </div>
     )
 }
-
-// const MessagePage = ({ addNewMessageAction, updateNewMessageAction, dialogsPage }) => {
-//     const { newMessageText, messages } = dialogsPage;
-//     return(
-//         messages.map( (m) => {
-//                 return(
-//                     <Route key={m.id} path={`/dialogs/${m.id}`} render={ () =>
-//                         <NewMessage
-//                             addNewMessageAction={addNewMessageAction}
-//                             updateNewMessageAction={updateNewMessageAction}
-//                             newMessageText={ newMessageText }
-//                             messages={messages}
-//                         />}
-//                     />
-//                 )
-//             }
-//         )
-//     )
-// }
 
 const Dialogs = ({ dialogsPage, addNewMessageAction, updateNewMessageAction }) => {
 

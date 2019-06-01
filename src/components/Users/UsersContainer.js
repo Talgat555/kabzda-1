@@ -1,6 +1,5 @@
 import React from 'react';
 import Users from './Users';
-import preloader from '../../Assets/images/preloader.svg';
 import {connect} from 'react-redux';
 import {
     follow,
@@ -11,6 +10,7 @@ import {
     unfollow
 } from "../../redux/users-reducer";
 import * as axios from 'axios';
+import Preloader from "../common/Preloader/preloader";
 
 
 class UsersAPI extends React.Component {
@@ -46,7 +46,7 @@ class UsersAPI extends React.Component {
         return(
             <>
                 {isFetching ?
-                    <img src={preloader} />
+                    <Preloader />
                 :
                     <Users users={users}
                            follow={follow}
