@@ -8,7 +8,8 @@ const Message = (props) => {
     )
 }
 
-const NewMessage = ({ addNewMessageAction, updateNewMessageAction, newMessageText, messages }) => {
+const NewMessage = ({ addNewMessageAction, updateNewMessageAction, dialogsPage }) => {
+    const { newMessageText, messages } = dialogsPage;
 
     let addNewMessage = () => {
         addNewMessageAction()

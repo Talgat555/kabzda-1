@@ -1,9 +1,26 @@
 .header {
-  grid-column: 1/3;
-  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-row: 1fr;
+  grid-gap: 5px;
+  height: 70px;
   background-color: green;
+  margin: auto;
+}
+.headerLogo {
+  grid-column: 1/2;
 }
 
 .header img {
-  width: 70px;
+  width:75px;
+}
+
+.loginContainer {
+  display: grid;
+  justify-content: end;
+  align-content: center;
+  margin-right: 10px;
+}
+.loginContainer a {
+  color: white;
 }

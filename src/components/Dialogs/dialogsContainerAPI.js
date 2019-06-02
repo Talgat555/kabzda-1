@@ -1,6 +1,6 @@
 import React from 'react';
 import DialogsContainer from "./Dialogs/dialogContainer";
-import MessagePageContainer from "./NewMessage/messagePageContainer";
+import MessagePageContainer from "./NewMessage/messagePageContainerAPI";
 
 
 
@@ -13,11 +13,6 @@ class DialogsContainerAPI extends React.Component {
             <div>
                 <div>
                     <DialogsContainer {...this.props} />
-                </div>
-                <div>
-                    <NavLink to={}>
-                        <MessagePageContainer {...this.props} />
-                    </NavLink>
                 </div>
             </div>
         )

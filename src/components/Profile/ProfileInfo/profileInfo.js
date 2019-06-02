@@ -14,16 +14,6 @@ const ProfileInfo = ({profile}) => {
             <div>
                 <img src={profile.photos.large} />
             </div>
-            {/*<div>*/}
-                {/*<Route key={profile.userId} path={`/profile/${profile.userId}`} render={ () =>*/}
-                    {/*<div>*/}
-                        {/*<img src={profile.photos.large} />*/}
-                    {/*</div>}*/}
-                {/*/>*/}
-            {/*</div>*/}
-            {/*<div className={s.content}>*/}
-                {/*<img src='https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg'/>*/}
-            {/*</div>*/}
             <div className={s.descriptionBlock}>
                 ava+description
             </div>

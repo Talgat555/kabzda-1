@@ -9,26 +9,7 @@ const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
 
 let initialState = {
-    users: [
-        // {id:1,
-        // photoUrl:'https://static1.vigbo.com/u20004/23148/blog/2195888/3800994/48514262/1000-sokolovskaya-5bc85340ac0ec65ebf7e21994466ef44.jpg',
-        // followed:false,
-        // fullName:'Dmitry',
-        // status:'I am a boss',
-        // location:{city:'Minsk', country:'Belarus'}},
-        // {id: 2,
-        // photoUrl:'https://static1.vigbo.com/u20004/23148/blog/2195888/3800994/48514262/1000-sokolovskaya-5bc85340ac0ec65ebf7e21994466ef44.jpg',
-        // followed:true,
-        // fullName:'Sasha',
-        // status:'I am a boss too',
-        // location:{city:'Moskow', country:'Russia'}},
-        // {id:3,
-        // photoUrl:'https://static1.vigbo.com/u20004/23148/blog/2195888/3800994/48514262/1000-sokolovskaya-5bc85340ac0ec65ebf7e21994466ef44.jpg',
-        // followed:false,
-        // fullName: 'Andrew',
-        // status: 'I am a boss too',
-        // location:{city:'Kiev', country:'Ukraine'}}
-    ],
+    users: [],
     pageSize: 5,
     totalUsersCount: 0,
     currentPage:1,
@@ -57,14 +38,14 @@ const usersReducer = (state = initialState, action) => {
             };
         case SET_USERS:
             return {...state, users: action.users}
-        default:
-            return state;
         case SET_CURRENT_PAGE:
             return {...state, currentPage: action.currentPage}
         case SET_TOTAL_USERS_COUNT:
             return {...state, totalUsersCount: action.totalCount}
         case TOGGLE_IS_FETCHING:
             return {...state, isFetching: action.isFetching}
+        default:
+            return state;
     }
 }
 

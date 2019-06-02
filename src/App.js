@@ -1,15 +1,17 @@
 import React from 'react';
 import {Switch} from 'react-router-dom';
-import Header from './components/Header/header';
 import './App.css';
 import Config from './config';
 import NavbarContainer from './components/Navbar/navbarContainer';
+import HeaderContainerAPI from "./components/Header/HeaderContainerAPI";
 
 
 const App = () => {
     return (
         <div className='app-wrapper'>
-            <Header/>
+            <div className='header'>
+                <HeaderContainerAPI/>
+            </div>
             <NavbarContainer/>
             <div className='app-wrapper-content'>
                 <Switch>

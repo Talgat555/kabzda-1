@@ -4,7 +4,7 @@ import MypostsContainer from '../MyPostsContainer/mypostsContainer';
 import s from './profile.module.css';
 
 
-const Profile = ({store, profile }) => {
+const Profile = ({ profile }) => {
 
     return (
         <div className={s.contaner} >
@@ -12,7 +12,7 @@ const Profile = ({store, profile }) => {
                 <ProfileInfo profile={profile}/>
             </div>
             <div className={s.myPost}>
-                <MypostsContainer store={store}/>
+                <MypostsContainer />
             </div>
         </div>
     );

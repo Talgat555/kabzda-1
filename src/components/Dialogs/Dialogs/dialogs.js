@@ -14,7 +14,7 @@ const Dialog = (props) => {
                 </div>
                 <div>
                     <li>
-                        <NavLink to={{pathname: `dialogs/${props.id}`}}>{props.name}</NavLink>
+                        <NavLink to={{pathname: `messages/${props.id}`}}>{props.name}</NavLink>
                     </li>
                 </div>
         </div>
@@ -35,31 +35,6 @@ const Dialogs = ({ dialogsPage, addNewMessageAction, updateNewMessageAction }) =
             <div className={s.dialogsItems}>
                 { dialogsElements }
             </div>
-            <NewMessage
-                newMessageText={newMessageText}
-                messages={messages} addNewMessageAction={addNewMessageAction}
-                updateNewMessageAction={updateNewMessageAction}
-            />
-            <div>
-                { messages.map( (m) => {
-                return(
-                <Route key={m.id} path={`/dialogs/${m.id}`} render={ () =>
-                    <NewMessage
-                        addNewMessageAction={addNewMessageAction}
-                        updateNewMessageAction={updateNewMessageAction}
-                        newMessageText={ newMessageText }
-                        messages={messages}
-                    />}
-                />
-                )
-            }
-                )}
-            </div>
-            {/*<MessagePage*/}
-                {/*addNewMessageAction={addNewMessageAction}*/}
-                {/*updateNewMessageAction={{updateNewMessageAction}}*/}
-                {/*dialogsPage={dialogsPage}*/}
-            {/*/>*/}
         </div>
     )
 }

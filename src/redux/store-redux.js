@@ -5,13 +5,15 @@ import sidebarReducer from './sidebar-reducer';
 import usersReducer from './users-reducer';
 import routerReducer from 'react-router-redux';
 import logger from 'redux-logger';
+import authReducer from "./auth-reducer";
 
 
 let reducers = combineReducers({
         profilePage: profileReducer,
         dialogsPage: dialogsReducer,
         usersPage: usersReducer,
-        sidebar: sidebarReducer
+        sidebar: sidebarReducer,
+        auth: authReducer
     }
 )
 

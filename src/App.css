@@ -12,3 +12,8 @@
   grid-row: 2/3;
   background-color: cornflowerblue;
 }
+
+.header {
+  grid-column: 1/3;
+    grid-gap: 5px;
+}
