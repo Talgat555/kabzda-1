@@ -43,22 +43,34 @@ const Users = ({
                             <div>
                                 {u.followed
                                     ? <button onClick={() =>{
-                                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                                        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
                                             withCredentials: true,
                                             headers: {
-                                                "API-KEY": "480aa397-28b9-4424-9fea-802638e39b56"
+                                                "API-KEY": "25918ef5-629a-49e7-adc2-673b7c4515a5"
                                             }
                                         })
                                             .then(response => {
-                                                if (response.data.resultCode === 0) {unfollow(u.id)}})}}>
-                                        folllow
-                                    </button>
-                                    : <button onClick={() =>{
-                                        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                                            withCredentials: true })
+                                                if (response.data.resultCode === 0){unfollow(u.id)}})
+                                            .catch(error => {
+                                                console.log(error);
+                                            });
+                                    }}>
+                                        unfollow
+                                        </button>
+                                     :   <button onClick={() =>{
+                                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                                            withCredentials: true,
+                                            headers: {
+                                                "API-KEY": "25918ef5-629a-49e7-adc2-673b7c4515a5"
+                                            }
+                                        })
                                             .then(response => {
-                                                if (response.data.resultCode === 0){follow(u.id)}})}}>
-                                        unfolllow
+                                                if (response.data.resultCode === 0) {follow(u.id)}})
+                                            .catch(error => {
+                                                console.log(error);
+                                            });
+                                        }}>
+                                        follow
                                     </button>
                                 }
                             </div>
