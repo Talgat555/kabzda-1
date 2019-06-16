@@ -1,3 +1,4 @@
+import React from 'react';
 import {connect} from "react-redux";
 import Dialogs from "./dialogs";
 import {addNewMessageAction, updateNewMessageAction } from "../../../redux/dialogs-reducer";
@@ -5,7 +6,8 @@ import {addNewMessageAction, updateNewMessageAction } from "../../../redux/dialo
 
 const mapStateToProps = (state) => {
     return{
-        dialogsPage: state.dialogsPage
+        dialogsPage: state.dialogsPage,
+        isAuth: state.auth.isAuth
     }
 }
 

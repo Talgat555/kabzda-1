@@ -7,6 +7,7 @@ import NewsContainer from "./components/News/newsContainer";
 import SettingsContainer from "./components/Settings/settingsContainer";
 import ProfileContainer from "./components/Profile/profileContainer";
 import DialogsContainerAPI from "./components/Dialogs/dialogsContainerAPI";
+import LoginContainer from "./components/Login/LoginContainer";
 
 
 const Config = () => {
@@ -19,6 +20,7 @@ const Config = () => {
             <Route path='/music' render={() => <MusicContainer />}/>
             <Route path='/settings' render={() => <SettingsContainer/>}/>
             <Route path='/users' render={() => <UsersContainer/>}/>
+            <Route path='/login' render={() => <LoginContainer/>}/>
         </Fragment>
     )
 }

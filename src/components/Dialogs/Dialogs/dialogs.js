@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink, Route, Switch} from 'react-router-dom';
+import {NavLink, Redirect, Route, Switch} from 'react-router-dom';
 import s from './dialogs.module.css';
 import NewMessage from "../NewMessage/newMessage";
 // import MessagePage from "./NewMessage/messagePage";
@@ -21,9 +21,11 @@ const Dialog = (props) => {
     )
 }
 
-const Dialogs = ({ dialogsPage, addNewMessageAction, updateNewMessageAction }) => {
+const Dialogs = ({ dialogsPage, isAuth}) => {
 
-    const { dialogs, newMessageText, messages } = dialogsPage
+    if(!isAuth) return <Redirect to={'login'} />
+
+    const { dialogs } = dialogsPage
 
     let dialogsElements = dialogs
         .map( (d) =>
