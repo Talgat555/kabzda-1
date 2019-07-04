@@ -1,12 +1,8 @@
 import React from 'react';
-import {NavLink, Redirect, Route, Switch} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import s from './dialogs.module.css';
-import NewMessage from "../NewMessage/newMessage";
-// import MessagePage from "./NewMessage/messagePage";
-
 
 const Dialog = (props) => {
-    // let path = '/dialogs/'+props.id;
     return (
         <div className={s.dialog}>
                 <div className={s.avatar}>
@@ -19,18 +15,16 @@ const Dialog = (props) => {
                 </div>
         </div>
     )
-}
+};
 
-const Dialogs = ({ dialogsPage, isAuth}) => {
+const Dialogs = ({ dialogsPage}) => {
 
-    if(!isAuth) return <Redirect to={'login'} />
-
-    const { dialogs } = dialogsPage
+    const { dialogs } = dialogsPage;
 
     let dialogsElements = dialogs
         .map( (d) =>
             <Dialog key={d.id} name={d.name} id={d.id} avatar={d.avatar} />
-        )
+        );
 
     return (
         <div className={s.dialogs}>
@@ -39,6 +33,6 @@ const Dialogs = ({ dialogsPage, isAuth}) => {
             </div>
         </div>
     )
-}
+};
 
 export default Dialogs;

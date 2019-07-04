@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './users.module.css';
 import userPhoto from '../../../src/Assets/images/user.png'
-import {NavLink, Redirect} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const Users = ({
                    users, follow, unfollow, currentPage, setCurrentPage, isAuth,
@@ -12,8 +12,6 @@ const Users = ({
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
-
-    if(!isAuth) return <Redirect to={'login'} />
 
     return (
         <div>

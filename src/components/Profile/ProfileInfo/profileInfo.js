@@ -1,8 +1,6 @@
 import React from 'react';
 import s from './profileInfo.module.css';
 import Preloader from "../../common/Preloader/preloader";
-import {Route} from "react-router-dom";
-
 
 const ProfileInfo = ({profile}) => {
 
@@ -19,7 +17,7 @@ const ProfileInfo = ({profile}) => {
             </div>
         </div>
     );
-}
+};
 
 
 export default ProfileInfo;

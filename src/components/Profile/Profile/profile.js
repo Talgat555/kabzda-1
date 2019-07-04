@@ -16,7 +16,6 @@ const Profile = ({ profile }) => {
             </div>
         </div>
     );
-}
-
+};
 
 export default Profile;
