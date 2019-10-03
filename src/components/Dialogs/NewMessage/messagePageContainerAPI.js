@@ -1,5 +1,5 @@
 import React from 'react';
-import {addNewMessageAction, updateNewMessageAction} from './../../../redux/dialogs-reducer';
+import {addNewMessageAction} from './../../../redux/dialogs-reducer';
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import NewMessage from "./newMessage";
@@ -9,7 +9,7 @@ import Preloader from "../../common/Preloader/preloader";
 class MessagePageContainerAPI extends React.Component{
 
     render(){
-        const {addNewMessageAction, updateNewMessageAction, dialogsPage, match} = this.props;
+        const {addNewMessageAction, dialogsPage, match} = this.props;
         let userId = match.params.userId;
 
         if (userId != null) {
@@ -17,7 +17,6 @@ class MessagePageContainerAPI extends React.Component{
                 <div>
                     <NewMessage path={`/dialogs/${userId}`}
                                 addNewMessageAction={addNewMessageAction}
-                                updateNewMessageAction={updateNewMessageAction}
                                 dialogsPage={dialogsPage}/>
                 </div>)
         }
@@ -38,5 +37,5 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps,
-    {addNewMessageAction, updateNewMessageAction})
+    {addNewMessageAction})
     (withRouter(MessagePageContainerAPI));

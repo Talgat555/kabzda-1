@@ -30,7 +30,7 @@ const profileReducer = (state = initialState, action) => {
             i++;
             let newPost = {
                 id: state.newPostText.id,
-                message: state.newPostText.text,
+                message: action.text,
                 likesCount: 0
             };
             return {...state,
@@ -46,7 +46,7 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export const addTextPost = () => ({ type: ADD_POST });
+export const addTextPost = (newPostText) => ({ type: ADD_POST, text: newPostText });
 export const onPostChange = (text) => ({ type: UPDATE_NEW_POST_TEXT, text });
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile });
 export const setStatus = (status) => ({ type: SET_STATUS, status });

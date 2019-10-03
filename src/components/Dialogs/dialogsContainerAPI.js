@@ -1,6 +1,5 @@
 import React from 'react';
 import DialogsContainer from "./Dialogs/dialogContainer";
-import MessagePageContainer from "./NewMessage/messagePageContainerAPI";
 
 
 

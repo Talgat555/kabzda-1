@@ -1,10 +1,32 @@
 import React from 'react';
 import s from './myposts.module.css';
 import Post from './Post/posts';
+import {Field, reduxForm} from "redux-form";
+import {maxLengthCreator, required} from "../../../utils/validators/validators";
+import {Textarea} from "../../common/FormsControls/Textarea";
 
-const Myposts = ({onPostChange, addTextPost, profilePage}) => {
 
-    const {posts, newPostText} = profilePage;
+const maxLength10 = maxLengthCreator(10);
+
+const AddNewPostForm = (props) => {
+
+    return(
+        <form onSubmit={props.handleSubmit}>
+            <div>
+                <Field placeholder="New Post" name="newPostText" component={Textarea} validate={[required, maxLength10]} />
+            </div>
+            <div>
+                <button>Add Post</button>
+            </div>
+        </form>
+    )
+};
+
+const AddNewPostFormRedux = reduxForm ({form: 'ProfileAddNewPostForm'})(AddNewPostForm);
+
+const Myposts = ({ addTextPost, profilePage}) => {
+
+    const {posts} = profilePage;
 
     let i = 1;
     let postsElements =
@@ -13,37 +35,15 @@ const Myposts = ({onPostChange, addTextPost, profilePage}) => {
                   message={p.message}
                   likesCount={p.likesCount}
             />
-        )
+        );
 
-    let newPostElement = React.createRef();
-
-    let changeAddTextPost = () => addTextPost();
-
-    let handleChange = () => {
-        let text = newPostElement.current.value;
-        onPostChange(text);
-    }
+    let changeAddTextPost = (values) => addTextPost(values.newPostText);
 
     return (
         <div className={s.postsBlock}>
             <h3>My posts</h3>
             <div>
-                <div>
-            <textarea
-                className={s.textarea}
-                onChange={handleChange}
-                ref={newPostElement}
-                placeholder='Enter your post'
-                value={newPostText.text}
-            />
-                </div>
-                <div>
-                    <button
-                        className={s.button}
-                        onClick={changeAddTextPost}>
-                        Add post
-                    </button>
-                </div>
+                <AddNewPostFormRedux onSubmit={changeAddTextPost} />
             </div>
             <div className={s.posts}>
                 {postsElements}

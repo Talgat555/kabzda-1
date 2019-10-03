@@ -1,6 +1,28 @@
 import React from 'react';
 import s from './newMessage.module.css';
+import {Field, reduxForm} from "redux-form";
+import {Textarea} from "../../common/FormsControls/Textarea";
+import {maxLengthCreator, required} from "../../../utils/validators/validators";
 
+
+const maxLength50 = maxLengthCreator(50);
+
+const AddNewMessageForm =(props)=>{
+    return(
+        <form>
+            <form onSubmit={props.handleSubmit}>
+                <div>
+                    <Field placeholder='Enter your message' name={"NewMessageBody"} component={Textarea} validate={[required, maxLength50]} />
+                </div>
+                <div>
+                    <button>Send</button>
+                </div>
+            </form>
+        </form>
+    )
+};
+
+const AddNewMessageFormRedux= reduxForm ({form:"dialogAddNewMessageForm"})(AddNewMessageForm);
 
 const Message = (props) => {
     return (
@@ -8,17 +30,12 @@ const Message = (props) => {
     )
 }
 
-const NewMessage = ({ addNewMessageAction, updateNewMessageAction, dialogsPage }) => {
-    const { newMessageText, messages } = dialogsPage;
+const NewMessage = ({ addNewMessageAction, dialogsPage }) => {
+    const { messages } = dialogsPage;
 
-    let addNewMessage = () => {
-        addNewMessageAction()
-    }
-
-    let newTextMessage = (e) => {
-        let message= e.target.value;
-        updateNewMessageAction(message)
-    }
+    let addNewMessage = (values) => {
+        addNewMessageAction(values.NewMessageBody)
+    };
     
     let messagesElements =
         messages.map( (m) =>
@@ -30,16 +47,7 @@ const NewMessage = ({ addNewMessageAction, updateNewMessageAction, dialogsPage }
             <div className={s.messages}>
                 {messagesElements}
             </div>
-            <textarea
-                className={s.textarea}
-                onChange={newTextMessage}
-                value={newMessageText.text}
-                placeholder='Enter your message'
-            />
-            <button
-                className={s.btnMessage}
-                onClick={addNewMessage}>New message
-            </button>
+            <AddNewMessageFormRedux onSubmit={addNewMessage}/>
         </div>
     )
 } 
