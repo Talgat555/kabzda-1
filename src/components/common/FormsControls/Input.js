@@ -3,7 +3,7 @@ import styles from './formsControls.module.css'
 
 
 
-export const Input = ({input, meta, props}) => {
+export const Input = ({input, meta, ...props}) => {
 
     const hasError = meta.touched && meta.error;
 
